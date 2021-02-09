@@ -1,0 +1,141 @@
+
+node #pragma ed <Operator oid="!ed/4a06/52DE/2B10/6022454b2598">
+	<diagrams>
+		<NetDiagram name="E1_Q2_1" landscape="true" format="A4 (210 297)" oid="!ed/4a07/52DE/2B10/6022454b11a8">
+			<presentationElements>
+				<EquationGE presentable="!ed/4a39/52DE/2B10/602245a77afb">
+					<position>
+						<Point x="13811" y="5953"/>
+					</position>
+					<size>
+						<Size width="1006" height="662"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4a3f/52DE/2B10/602245a7255f">
+					<position>
+						<Point x="11060" y="7250"/>
+					</position>
+					<size>
+						<Size width="1006" height="661"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4a43/52DE/2B10/602245a71c3c">
+					<position>
+						<Point x="8440" y="5900"/>
+					</position>
+					<size>
+						<Size width="265" height="503"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4a47/52DE/2B10/602245a7319b">
+					<position>
+						<Point x="11139" y="5662"/>
+					</position>
+					<size>
+						<Size width="1005" height="1006"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4a49/52DE/2B10/602245a76e17">
+					<position>
+						<Point x="16140" y="6033"/>
+					</position>
+					<size>
+						<Size width="318" height="503"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4a47/52DE/2B10/602245a7319b" dstEquation="!ed/4a39/52DE/2B10/602245a77afb">
+					<positions>
+						<Point x="12144" y="6165"/>
+						<Point x="12965" y="6165"/>
+						<Point x="12965" y="6165"/>
+						<Point x="13811" y="6165"/>
+					</positions>
+				</Edge>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4a43/52DE/2B10/602245a71c3c" dstEquation="!ed/4a47/52DE/2B10/602245a7319b">
+					<positions>
+						<Point x="8705" y="6165"/>
+						<Point x="10319" y="6165"/>
+						<Point x="10319" y="6165"/>
+						<Point x="11139" y="6165"/>
+					</positions>
+				</Edge>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4a43/52DE/2B10/602245a71c3c" dstEquation="!ed/4a3f/52DE/2B10/602245a7255f">
+					<positions>
+						<Point x="8705" y="6165"/>
+						<Point x="10160" y="6165"/>
+						<Point x="10160" y="7594"/>
+						<Point x="11060" y="7594"/>
+					</positions>
+				</Edge>
+				<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/4a3f/52DE/2B10/602245a7255f" dstEquation="!ed/4a39/52DE/2B10/602245a77afb">
+					<positions>
+						<Point x="12065" y="7594"/>
+						<Point x="12991" y="7594"/>
+						<Point x="12991" y="6403"/>
+						<Point x="13811" y="6403"/>
+					</positions>
+				</Edge>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4a39/52DE/2B10/602245a77afb" dstEquation="!ed/4a49/52DE/2B10/602245a76e17">
+					<positions>
+						<Point x="14817" y="6297"/>
+						<Point x="15505" y="6297"/>
+						<Point x="15505" y="6297"/>
+						<Point x="16193" y="6297"/>
+					</positions>
+				</Edge>
+			</presentationElements>
+		</NetDiagram>
+	</diagrams>
+</Operator>
+#end
+
+E1_Q2(
+      #pragma ed    <Variable oid="!ed/4a37/52DE/2B10/602245a775f8"/>
+#end
+
+Input1 : bool)
+returns (
+      #pragma ed    <Variable oid="!ed/4a38/52DE/2B10/602245a74991"/>
+#end
+
+Output1 : bool)
+var
+      #pragma ed    <Variable oid="!ed/4a48/52DE/2B10/602245a731c2"/>
+#end
+
+_L8 : bool;
+      #pragma ed    <Variable oid="!ed/4a44/52DE/2B10/602245a795b"/>
+#end
+
+_L6 : bool;
+      #pragma ed    <Variable oid="!ed/4a40/52DE/2B10/602245a7cf7"/>
+#end
+
+_L4 : bool;
+      #pragma ed    <Variable oid="!ed/4a3a/52DE/2B10/602245a7200a"/>
+#end
+
+_L1 : bool;
+let
+   #pragma ed    <Equation oid="!ed/4a39/52DE/2B10/602245a77afb"/>
+#end
+
+   _L1 = _L8 #2  and _L4;
+   #pragma ed    <Equation oid="!ed/4a3f/52DE/2B10/602245a7255f"/>
+#end
+
+   _L4 =  #1  not _L6;
+   #pragma ed    <Equation oid="!ed/4a43/52DE/2B10/602245a71c3c"/>
+#end
+
+   _L6 = Input1;
+   #pragma ed    <Equation oid="!ed/4a47/52DE/2B10/602245a7319b"/>
+#end
+
+   _L8 =  #1 fby(_L6; 1; true);
+   #pragma ed    <Equation oid="!ed/4a49/52DE/2B10/602245a76e17"/>
+#end
+
+   Output1 = _L1;
+tel
+

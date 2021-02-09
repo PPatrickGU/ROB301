@@ -1,0 +1,62 @@
+$************** ANSYS(R) SCADE Suite(R) - SCADETOC - Version Student 2021 R1 (build 20201118T195152) **************
+** Generation date: 2021-02-09T16:24:58
+** Command: scade -code "E:\ROB301\ROB301\TP2\TP2.etp" -root E1_Q2 -conf Simulation -sim -all
+*************************************************************$
+*** Generated Files Information (GENFIL): KCG- Generated files
+  at file E:\ROB301\ROB301\TP2\Simulation\mapping.xml, line 0, character 0
+ ~mapping.xml
+  at file E:\ROB301\ROB301\TP2\Simulation\kcg_metrics.txt, line 0, character 0
+ ~kcg_metrics.txt
+  at file E:\ROB301\ROB301\TP2\Simulation\E1_Q2.c, line 0, character 0
+ ~E1_Q2.c
+  at file E:\ROB301\ROB301\TP2\Simulation\E1_Q2.h, line 0, character 0
+ ~E1_Q2.h
+  at file E:\ROB301\ROB301\TP2\Simulation\kcg_types.h, line 0, character 0
+ ~kcg_types.h
+  at file E:\ROB301\ROB301\TP2\Simulation\kcg_consts.h, line 0, character 0
+ ~kcg_consts.h
+  at file E:\ROB301\ROB301\TP2\Simulation\kcg_sensors.h, line 0, character 0
+ ~kcg_sensors.h
+  at file E:\ROB301\ROB301\TP2\Simulation\kcg_types.c, line 0, character 0
+ ~kcg_types.c
+  at file E:\ROB301\ROB301\TP2\Simulation\kcg_consts.c, line 0, character 0
+ ~kcg_consts.c
+  at file E:\ROB301\ROB301\TP2\Simulation\config.txt, line 0, character 0
+ ~config.txt
+*** Generated Files Information (GENFIL): Code Generator Generated files
+  at file E:\ROB301\ROB301\TP2\Simulation\user_macros.h, line 0, character 0
+ ~user_macros.h
+  at file E:\ROB301\ROB301\TP2\Simulation\kcg_imported_types.h, line 0, character 0
+ ~kcg_imported_types.h
+  at file E:\ROB301\ROB301\TP2\Simulation\sc2c.log, line 0, character 0
+ ~sc2c.log
+  at file E:\ROB301\ROB301\TP2\Simulation\sc2c_integration_files.txt, line 0, character 0
+ ~sc2c_integration_files.txt
+*** Generated Files Information (GENFIL): Type Utils Generated files
+  at file E:\ROB301\ROB301\TP2\Simulation\TP2_type.h, line 0, character 0
+ ~TP2_type.h
+  at file E:\ROB301\ROB301\TP2\Simulation\TP2_type.c, line 0, character 0
+ ~TP2_type.c
+*** Generated Files Information (GENFIL): Mapping Utils Generated files
+  at file E:\ROB301\ROB301\TP2\Simulation\TP2_mapping.h, line 0, character 0
+ ~TP2_mapping.h
+  at file E:\ROB301\ROB301\TP2\Simulation\TP2_mapping.c, line 0, character 0
+ ~TP2_mapping.c
+*** Generated Files Information (GENFIL): Simulator Generated files
+  at file E:\ROB301\ROB301\TP2\Simulation\TP2_interface.h, line 0, character 0
+ ~TP2_interface.h
+  at file E:\ROB301\ROB301\TP2\Simulation\TP2_interface.c, line 0, character 0
+ ~TP2_interface.c
+  at file E:\ROB301\ROB301\TP2\Simulation\TP2_dll.c, line 0, character 0
+ ~TP2_dll.c
+*** Generated Files Information (GENFIL): Build Generated files
+  at file E:\ROB301\ROB301\TP2\Simulation\Makefile_win64, line 0, character 0
+ ~Makefile_win64
+  at file E:\ROB301\ROB301\TP2\Simulation\E1_Q2.dll, line 0, character 0
+ ~E1_Q2.dll
+  at file E:\ROB301\ROB301\TP2\Simulation\E1_Q2.exe, line 0, character 0
+ ~E1_Q2.exe
+$************** ANSYS(R) SCADE Suite(R) - SCADETOC - Version Student 2021 R1 (build 20201118T195152) **************
+** Generation date: 2021-02-09T16:24:59
+** sc2c.log
+*************************************************************$
