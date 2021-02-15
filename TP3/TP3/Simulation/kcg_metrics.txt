@@ -1,0 +1,29 @@
+$ ANSYS SCADE Suite (R) Code Generator version Student 2021 R1 (build 20201118) 
+** Command: scadecg.exe -config E:/ROB301/TP3/TP3/Simulation/config.txt
+** Generation date: 2021-02-15T18:43:32
+*************************************************************$
+Data structures
+  Structures
+    Max members in a single structure: 18
+  Arrays
+    Max number of dimensions for an array: 1
+    Maximum size for a dimension: 3
+  Enumeration
+    Max of enum constants in a single enumeration: 7
+Control structures
+  Max numbers of case labels in a switch: 5
+  Max number of nesting levels in compound statement: 2
+Program size
+  Functions
+    Max number of function parameters in definition: 2
+    Max number of function arguments in a call: 3
+  Expressions
+    Max number of nesting levels of parenthesized expression in a full expression: 2
+  Identifiers
+    Max number of identifiers with block scope declared in one block: 49
+    Max number of macro identifiers simultaneously defined in one preprocessing translation unit: 42
+    Max number of extern identifiers in one translation unit: 4
+$ ANSYS SCADE Suite (R) Code Generator version Student 2021 R1 (build 20201118) 
+** kcg_metrics.txt
+** Generation date: 2021-02-15T18:43:32
+*************************************************************$

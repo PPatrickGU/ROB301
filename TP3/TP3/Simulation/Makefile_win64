@@ -1,0 +1,66 @@
+#############################################################
+######    Begin of Makefile
+#############################################################
+
+SCADE=D:\Program Files\ANSYS Inc\v211\SCADE Student\SCADE\.
+
+SHELL=cmd.exe
+
+C_FLAGS = -pedantic
+
+all: E1_Q2.exe E1_Q2.dll 
+
+win64/E1_Q2.o: E1_Q2.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "E1_Q2.c" -o "win64\E1_Q2.o"
+
+win64/kcg_types.o: kcg_types.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "kcg_types.c" -o "win64\kcg_types.o"
+
+win64/kcg_consts.o: kcg_consts.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "kcg_consts.c" -o "win64\kcg_consts.o"
+
+win64/TP3_mapping.o: TP3_mapping.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "TP3_mapping.c" -o "win64\TP3_mapping.o"
+
+win64/TP3_type.o: TP3_type.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "TP3_type.c" -o "win64\TP3_type.o"
+
+win64/SmuPredefConv.o: D:/Program\ Files/ANSYS\ Inc/v211/SCADE\ Student/SCADE/lib/C/SmuPredefConv.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "$(SCADE)\lib\C\SmuPredefConv.c" -o "win64\SmuPredefConv.o"
+
+win64/SmuConfig.o: D:/Program\ Files/ANSYS\ Inc/v211/SCADE\ Student/SCADE/lib/C/SmuConfig.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "$(SCADE)\lib\C\SmuConfig.c" -o "win64\SmuConfig.o"
+
+win64/SmuTypes.o: D:/Program\ Files/ANSYS\ Inc/v211/SCADE\ Student/SCADE/lib/C/SmuTypes.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "$(SCADE)\lib\C\SmuTypes.c" -o "win64\SmuTypes.o"
+
+win64/SmuLib.o: D:/Program\ Files/ANSYS\ Inc/v211/SCADE\ Student/SCADE/lib/C/SmuLib.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "$(SCADE)\lib\C\SmuLib.c" -o "win64\SmuLib.o"
+
+win64/SmuVTable.o: D:/Program\ Files/ANSYS\ Inc/v211/SCADE\ Student/SCADE/lib/C/SmuVTable.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "$(SCADE)\lib\C\SmuVTable.c" -o "win64\SmuVTable.o"
+
+win64/TP3_interface.o: TP3_interface.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "TP3_interface.c" -o "win64\TP3_interface.o"
+
+win64/SmuProxy.o: D:/Program\ Files/ANSYS\ Inc/v211/SCADE\ Student/SCADE/lib/C/SmuProxy.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "D:\Program Files\ANSYS Inc\v211\SCADE Student\SCADE\lib\C\SmuProxy.c" -o "win64\SmuProxy.o"
+
+E1_Q2.dll: win64/E1_Q2.o win64/kcg_types.o win64/kcg_consts.o win64/TP3_mapping.o win64/TP3_type.o win64/SmuPredefConv.o win64/SmuConfig.o win64/SmuTypes.o win64/SmuLib.o win64/SmuVTable.o win64/TP3_interface.o win64/SmuProxy.o SmuExport.def 
+	gcc -mwindows -mwin32 -shared -static-libgcc  "win64\E1_Q2.o" "win64\kcg_types.o" "win64\kcg_consts.o" "win64\TP3_mapping.o" "win64\TP3_type.o" "win64\SmuPredefConv.o" "win64\SmuConfig.o" "win64\SmuTypes.o" "win64\SmuLib.o" "win64\SmuVTable.o" "win64\TP3_interface.o" "win64\SmuProxy.o" -Wl,--output-def,"SmuExport.def" -lm -lwsock32 -m64 -o "E1_Q2.dll" 
+
+SmuExport.def: D:/Program\ Files/ANSYS\ Inc/v211/SCADE\ Student/SCADE/lib/C/SmuExport.def
+	copy "D:\Program Files\ANSYS Inc\v211\SCADE Student\SCADE\lib\C\SmuExport.def" "SmuExport.def"
+
+win64/TP3_dll.o: TP3_dll.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "TP3_dll.c" -o "win64\TP3_dll.o"
+
+win64/SmuMainWindows.o: D:/Program\ Files/ANSYS\ Inc/v211/SCADE\ Student/SCADE/lib/C/SmuMainWindows.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "D:\Program Files\ANSYS Inc\v211\SCADE Student\SCADE\lib\C\SmuMainWindows.c" -o "win64\SmuMainWindows.o"
+
+E1_Q2.exe: win64/TP3_dll.o win64/SmuMainWindows.o 
+	gcc "win64\TP3_dll.o" "win64\SmuMainWindows.o" -lm -lwsock32 -m64 -o "E1_Q2.exe" 
+
+#############################################################
+######    End of Makefile
+#############################################################

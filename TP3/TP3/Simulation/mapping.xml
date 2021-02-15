@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--$ ANSYS SCADE Suite (R) Code Generator version Student 2021 R1 (build 20201118) 
+** Command: scadecg.exe -config E:/ROB301/TP3/TP3/Simulation/config.txt
+** Generation date: 2021-02-15T18:43:32
+*************************************************************$-->
+<mapping>
+  <config>
+    <option name="use_types" value="#off#"/>
+    <option name="imported_root_package" value="#off#"/>
+    <option name="root_package" value="#off#"/>
+    <option name="xml_basename" value="kcg_xml_filter_out.scade"/>
+    <option name="state_vector" value="#off#"/>
+    <option name="static" value="#off#"/>
+    <option name="separate_io_all" value="#off#"/>
+    <option name="no_separate_io" value="#off#"/>
+    <option name="separate_io" value="#off#"/>
+    <option name="warn_error" value="#off#"/>
+    <option name="short_circuit" value="#off#"/>
+    <option name="wrap_c_ops" value="#off#"/>
+    <option name="input_file" value="E:/ROB301/TP3/TP3/Simulation/scade_model_without_unused.scade"/>
+    <option name="probes" value="#on#"/>
+    <option name="no_observe" value="#off#"/>
+    <option name="observe" value="#off#"/>
+    <option name="debug" value="#on#"/>
+    <option name="user_config" value="./user_macros.h"/>
+    <option name="input_threshold" value="#off#"/>
+    <option name="header" value="#off#"/>
+    <option name="significance_length" value="31"/>
+    <option name="name_length" value="200"/>
+    <option name="globals_prefix" value="#off#"/>
+    <option name="keep_asserts" value="#off#"/>
+    <option name="global_root_context" value="#off#"/>
+    <option name="expall" value="#off#"/>
+    <option name="noexp" value="#off#"/>
+    <option name="exp" value="#off#"/>
+    <option name="target_dir" value="E:/ROB301/TP3/TP3/Simulation"/>
+    <option name="target" value="C"/>
+    <option name="root" value="E1_Q2"/>
+    <option name="auth" value="#off#"/>
+  </config>
+  <model>
+    <array id="1" baseType="2" size="3"/>
+    <predefType id="2" name="bool"/>
+    <predefType id="3" name="char"/>
+    <predefType id="4" name="int8"/>
+    <predefType id="5" name="int16"/>
+    <predefType id="6" name="int32"/>
+    <predefType id="7" name="int64"/>
+    <predefType id="8" name="uint8"/>
+    <predefType id="9" name="uint16"/>
+    <predefType id="10" name="uint32"/>
+    <predefType id="11" name="uint64"/>
+    <predefType id="12" name="float32"/>
+    <predefType id="13" name="float64"/>
+    <predefType id="14" name="size"/>
+    <operator id="15" name="E1_Q2" imported="false" root="true" expanded="false">
+      <input id="16" name="x" clock="false" type="1"/>
+      <output id="17" name="y" clock="false" type="2"/>
+      <output id="18" name="error" clock="false" type="2"/>
+      <automaton id="19" name="SM1">
+        <state id="20" name="OK" initial="true" final="false" default="false">
+          <local id="21" name="_L5" clock="false" type="2"/>
+          <local id="22" name="_L6" clock="false" type="2"/>
+          <fork id="23" name="1" kind="strong">
+            <transition id="24" dest="29"/>
+          </fork>
+          <fork id="25" name="2" kind="strong">
+            <transition id="26" dest="34"/>
+          </fork>
+          <fork id="27" name="3" kind="strong">
+            <transition id="28" dest="41"/>
+          </fork>
+        </state>
+        <state id="29" name="x1_ko" initial="false" final="false" default="false">
+          <local id="30" name="_L2" clock="false" type="2"/>
+          <local id="31" name="_L3" clock="false" type="2"/>
+          <fork id="32" name="1" kind="strong">
+            <transition id="33" dest="39"/>
+          </fork>
+        </state>
+        <state id="34" name="x2_ko" initial="false" final="false" default="false">
+          <local id="35" name="_L2" clock="false" type="2"/>
+          <local id="36" name="_L4" clock="false" type="2"/>
+          <fork id="37" name="1" kind="strong">
+            <transition id="38" dest="39"/>
+          </fork>
+        </state>
+        <state id="39" name="KO" initial="false" final="false" default="false">
+          <local id="40" name="_L2" clock="false" type="2"/>
+        </state>
+        <state id="41" name="x0_ko" initial="false" final="false" default="false">
+          <local id="42" name="_L2" clock="false" type="2"/>
+          <local id="43" name="_L3" clock="false" type="2"/>
+          <fork id="44" name="1" kind="strong">
+            <transition id="45" dest="39"/>
+          </fork>
+        </state>
+      </automaton>
+    </operator>
+  </model>
+  <generated>
+    <c>
+      <file id="46" name="E1_Q2.h">
+        <function id="47" name="E1_Q2_init">
+          <parameter id="48" name="outC" type="54" pointer="true"/>
+        </function>
+        <function id="49" name="E1_Q2_reset">
+          <parameter id="50" name="outC" type="54" pointer="true"/>
+        </function>
+        <function id="51" name="E1_Q2">
+          <parameter id="52" name="inC" type="73" pointer="true"/>
+          <parameter id="53" name="outC" type="54" pointer="true"/>
+        </function>
+        <struct id="54" name="outC_E1_Q2">
+          <field id="55" name="y" type="130" pointer="false"/>
+          <field id="56" name="error" type="130" pointer="false"/>
+          <field id="57" name="SM1_state_nxt" type="82" pointer="false"/>
+          <field id="58" name="SM1_reset_act" type="130" pointer="false"/>
+          <field id="59" name="SM1_reset_nxt" type="130" pointer="false"/>
+          <field id="60" name="SM1_state_act" type="82" pointer="false"/>
+          <field id="61" name="_L6_OK_SM1" type="130" pointer="false"/>
+          <field id="62" name="_L5_OK_SM1" type="130" pointer="false"/>
+          <field id="63" name="_L3_x1_ko_SM1" type="130" pointer="false"/>
+          <field id="64" name="_L2_x1_ko_SM1" type="130" pointer="false"/>
+          <field id="65" name="_L4_x2_ko_SM1" type="130" pointer="false"/>
+          <field id="66" name="_L2_x2_ko_SM1" type="130" pointer="false"/>
+          <field id="67" name="_L2_KO_SM1" type="130" pointer="false"/>
+          <field id="68" name="_L3_x0_ko_SM1" type="130" pointer="false"/>
+          <field id="69" name="_L2_x0_ko_SM1" type="130" pointer="false"/>
+          <field id="70" name="SM1_state_sel" type="82" pointer="false"/>
+          <field id="71" name="SM1_fired_strong" type="88" pointer="false"/>
+          <field id="72" name="SM1_fired" type="88" pointer="false"/>
+        </struct>
+        <struct id="73" name="inC_E1_Q2">
+          <field id="74" name="x" type="81" pointer="false"/>
+        </struct>
+      </file>
+      <file id="75" name="kcg_types.h">
+        <ifdef id="76" name="kcg_use_array_bool_3">
+          <function id="77" name="kcg_comp_array_bool_3" returnType="130">
+            <parameter id="78" name="kcg_c1" type="81" pointer="true"/>
+            <parameter id="79" name="kcg_c2" type="81" pointer="true"/>
+          </function>
+        </ifdef>
+        <macro id="80" name="kcg_copy_array_bool_3"/>
+        <array id="81" name="array_bool_3" baseType="130" size="3"/>
+        <enum id="82" name="SSM_ST_SM1" tagName="kcg_tag_SSM_ST_SM1">
+          <value id="83" name="SSM_st_OK_SM1"/>
+          <value id="84" name="SSM_st_x1_ko_SM1"/>
+          <value id="85" name="SSM_st_x2_ko_SM1"/>
+          <value id="86" name="SSM_st_KO_SM1"/>
+          <value id="87" name="SSM_st_x0_ko_SM1"/>
+        </enum>
+        <enum id="88" name="SSM_TR_SM1" tagName="kcg_tag_SSM_TR_SM1">
+          <value id="89" name="SSM_TR_no_trans_SM1"/>
+          <value id="90" name="SSM_TR_OK_x1_ko_1_OK_SM1"/>
+          <value id="91" name="SSM_TR_OK_x2_ko_2_OK_SM1"/>
+          <value id="92" name="SSM_TR_OK_x0_ko_3_OK_SM1"/>
+          <value id="93" name="SSM_TR_x1_ko_KO_1_x1_ko_SM1"/>
+          <value id="94" name="SSM_TR_x2_ko_KO_1_x2_ko_SM1"/>
+          <value id="95" name="SSM_TR_x0_ko_KO_1_x0_ko_SM1"/>
+        </enum>
+        <macro id="96" name="kcg_assign_array"/>
+        <macro id="97" name="kcg_assign_struct"/>
+        <macro id="98" name="kcg_lnot_uint8"/>
+        <macro id="99" name="kcg_lnot_uint16"/>
+        <macro id="100" name="kcg_lnot_uint32"/>
+        <macro id="101" name="kcg_lnot_uint64"/>
+        <macro id="102" name="kcg_lsl_uint8"/>
+        <macro id="103" name="kcg_lsl_uint16"/>
+        <macro id="104" name="kcg_lsl_uint32"/>
+        <macro id="105" name="kcg_lsl_uint64"/>
+        <macro id="106" name="kcg_true"/>
+        <macro id="107" name="kcg_false"/>
+        <macro id="108" name="kcg_lit_int8"/>
+        <macro id="109" name="kcg_lit_int16"/>
+        <macro id="110" name="kcg_lit_int32"/>
+        <macro id="111" name="kcg_lit_int64"/>
+        <macro id="112" name="kcg_lit_uint8"/>
+        <macro id="113" name="kcg_lit_uint16"/>
+        <macro id="114" name="kcg_lit_uint32"/>
+        <macro id="115" name="kcg_lit_uint64"/>
+        <macro id="116" name="kcg_lit_size"/>
+        <macro id="117" name="kcg_lit_float64"/>
+        <macro id="118" name="kcg_lit_float32"/>
+        <predefType id="119" name="kcg_int8"/>
+        <predefType id="120" name="kcg_int16"/>
+        <predefType id="121" name="kcg_int32"/>
+        <predefType id="122" name="kcg_int64"/>
+        <predefType id="123" name="kcg_uint8"/>
+        <predefType id="124" name="kcg_uint16"/>
+        <predefType id="125" name="kcg_uint32"/>
+        <predefType id="126" name="kcg_uint64"/>
+        <predefType id="127" name="kcg_size"/>
+        <predefType id="128" name="kcg_float64"/>
+        <predefType id="129" name="kcg_float32"/>
+        <predefType id="130" name="kcg_bool"/>
+        <predefType id="131" name="kcg_char"/>
+        <macro id="132" name="KCG_MAPW_CPY"/>
+      </file>
+      <file id="133" name="kcg_consts.h"/>
+      <file id="134" name="kcg_sensors.h"/>
+    </c>
+    <map srcId="128" dstId="117" role="wrapped-lit"/>
+    <map srcId="129" dstId="118" role="wrapped-lit"/>
+    <map srcId="127" dstId="116" role="wrapped-lit"/>
+    <map srcId="126" dstId="115" role="wrapped-lit"/>
+    <map srcId="126" dstId="101" role="wrapped-lnot"/>
+    <map srcId="126" dstId="105" role="wrapped-lsl"/>
+    <map srcId="125" dstId="114" role="wrapped-lit"/>
+    <map srcId="125" dstId="100" role="wrapped-lnot"/>
+    <map srcId="125" dstId="104" role="wrapped-lsl"/>
+    <map srcId="124" dstId="113" role="wrapped-lit"/>
+    <map srcId="124" dstId="99" role="wrapped-lnot"/>
+    <map srcId="124" dstId="103" role="wrapped-lsl"/>
+    <map srcId="123" dstId="112" role="wrapped-lit"/>
+    <map srcId="123" dstId="98" role="wrapped-lnot"/>
+    <map srcId="123" dstId="102" role="wrapped-lsl"/>
+    <map srcId="122" dstId="111" role="wrapped-lit"/>
+    <map srcId="121" dstId="110" role="wrapped-lit"/>
+    <map srcId="120" dstId="109" role="wrapped-lit"/>
+    <map srcId="119" dstId="108" role="wrapped-lit"/>
+    <map srcId="81" dstId="76" role="type-use"/>
+    <map srcId="81" dstId="77" role="type-comparison"/>
+    <map srcId="81" dstId="80" role="type-copy"/>
+    <map srcId="69" dstId="60" role="clock"/>
+    <map srcId="69" dstId="87" role="clock-value"/>
+    <map srcId="68" dstId="60" role="clock"/>
+    <map srcId="68" dstId="87" role="clock-value"/>
+    <map srcId="67" dstId="60" role="clock"/>
+    <map srcId="67" dstId="86" role="clock-value"/>
+    <map srcId="66" dstId="60" role="clock"/>
+    <map srcId="66" dstId="85" role="clock-value"/>
+    <map srcId="65" dstId="60" role="clock"/>
+    <map srcId="65" dstId="85" role="clock-value"/>
+    <map srcId="64" dstId="60" role="clock"/>
+    <map srcId="64" dstId="84" role="clock-value"/>
+    <map srcId="63" dstId="60" role="clock"/>
+    <map srcId="63" dstId="84" role="clock-value"/>
+    <map srcId="62" dstId="60" role="clock"/>
+    <map srcId="62" dstId="83" role="clock-value"/>
+    <map srcId="61" dstId="60" role="clock"/>
+    <map srcId="61" dstId="83" role="clock-value"/>
+  </generated>
+  <map modelId="28" generatedId="92"/>
+  <map modelId="26" generatedId="91"/>
+  <map modelId="24" generatedId="90"/>
+  <map modelId="20" generatedId="83"/>
+  <map modelId="33" generatedId="93"/>
+  <map modelId="29" generatedId="84"/>
+  <map modelId="38" generatedId="94"/>
+  <map modelId="34" generatedId="85"/>
+  <map modelId="19" generatedId="89" role="autom-no-trans-enum"/>
+  <map modelId="45" generatedId="95"/>
+  <map modelId="41" generatedId="87"/>
+  <map modelId="39" generatedId="86"/>
+  <map modelId="15" generatedId="48" role="context-parameter"/>
+  <map modelId="15" generatedId="47" role="init-method"/>
+  <map modelId="15" generatedId="50" role="context-parameter"/>
+  <map modelId="15" generatedId="49" role="reset-method"/>
+  <map modelId="15" generatedId="52" role="input-struct-parameter"/>
+  <map modelId="16" generatedId="74"/>
+  <map modelId="15" generatedId="73" role="input-struct-type"/>
+  <map modelId="15" generatedId="53" role="context-parameter"/>
+  <map modelId="19" generatedId="72" role="autom-weak-transition"/>
+  <map modelId="19" generatedId="71" role="autom-strong-transition"/>
+  <map modelId="19" generatedId="70" role="autom-selected-state"/>
+  <map modelId="42" generatedId="69"/>
+  <map modelId="43" generatedId="68"/>
+  <map modelId="40" generatedId="67"/>
+  <map modelId="35" generatedId="66"/>
+  <map modelId="36" generatedId="65"/>
+  <map modelId="30" generatedId="64"/>
+  <map modelId="31" generatedId="63"/>
+  <map modelId="21" generatedId="62"/>
+  <map modelId="22" generatedId="61"/>
+  <map modelId="19" generatedId="60" role="autom-active-state"/>
+  <map modelId="19" generatedId="59" role="autom-next-reset"/>
+  <map modelId="19" generatedId="58" role="autom-active-reset"/>
+  <map modelId="19" generatedId="57" role="autom-next-state"/>
+  <map modelId="18" generatedId="56"/>
+  <map modelId="17" generatedId="55"/>
+  <map modelId="19" generatedId="55" role="memory"/>
+  <map modelId="15" generatedId="54" role="context-type"/>
+  <map modelId="15" generatedId="46" role="interface-file"/>
+  <map modelId="15" generatedId="51" role="cycle-method"/>
+  <map modelId="19" generatedId="88" role="autom-transitions-type"/>
+  <map modelId="19" generatedId="82" role="autom-states-type"/>
+  <map modelId="1" generatedId="81"/>
+  <map modelId="3" generatedId="131"/>
+  <map modelId="2" generatedId="130"/>
+  <map modelId="13" generatedId="128"/>
+  <map modelId="12" generatedId="129"/>
+  <map modelId="14" generatedId="127"/>
+  <map modelId="11" generatedId="126"/>
+  <map modelId="10" generatedId="125"/>
+  <map modelId="9" generatedId="124"/>
+  <map modelId="8" generatedId="123"/>
+  <map modelId="7" generatedId="122"/>
+  <map modelId="6" generatedId="121"/>
+  <map modelId="5" generatedId="120"/>
+  <map modelId="4" generatedId="119"/>
+</mapping>
+<!--$ ANSYS SCADE Suite (R) Code Generator version Student 2021 R1 (build 20201118) 
+** mapping.xml
+** Generation date: 2021-02-15T18:43:32
+*************************************************************$-->

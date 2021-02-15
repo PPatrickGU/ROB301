@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <Model commandLine="" date="">
+    <Option name="use_types" value="#off#"/>
+    <Option name="imported_root_package" value="#off#"/>
+    <Option name="root_package" value="#off#"/>
+    <Option name="xml_basename" value="kcg_xml_filter_out.scade"/>
+    <Option name="state_vector" value="#off#"/>
+    <Option name="static" value="#off#"/>
+    <Option name="separate_io_all" value="#off#"/>
+    <Option name="no_separate_io" value="#off#"/>
+    <Option name="separate_io" value="#off#"/>
+    <Option name="warn_error" value="#off#"/>
+    <Option name="short_circuit" value="#off#"/>
+    <Option name="wrap_c_ops" value="#off#"/>
+    <Option name="input_file" value="E:/ROB301/TP3/TP3/Simulation/scade_model_without_unused.scade"/>
+    <Option name="probes" value="#on#"/>
+    <Option name="no_observe" value="#off#"/>
+    <Option name="observe" value="#off#"/>
+    <Option name="debug" value="#on#"/>
+    <Option name="user_config" value="./user_macros.h"/>
+    <Option name="input_threshold" value="#off#"/>
+    <Option name="header" value="#off#"/>
+    <Option name="significance_length" value="31"/>
+    <Option name="name_length" value="200"/>
+    <Option name="globals_prefix" value="#off#"/>
+    <Option name="keep_asserts" value="#off#"/>
+    <Option name="global_root_context" value="#off#"/>
+    <Option name="expall" value="#off#"/>
+    <Option name="noexp" value="#off#"/>
+    <Option name="exp" value="#off#"/>
+    <Option name="target_dir" value="E:/ROB301/TP3/TP3/Simulation"/>
+    <Option name="target" value="C"/>
+    <Option name="root" value="E1_Q2"/>
+    <Option name="auth" value="#off#"/>
+    <RootNode headerFile="E1_Q2.h" scadeName="E1_Q2" targetCycleFct="E1_Q2" targetInitFct="E1_Q2_reset" targetInitializationFct="E1_Q2_init">
+      <Input inCtx="true" scadeName="x" scadeType="bool^(3)" targetName="x" targetType="array_bool_3"/>
+      <Output inCtx="true" scadeName="y" scadeType="bool" targetName="y" targetType="kcg_bool"/>
+      <Output inCtx="true" scadeName="error" scadeType="bool" targetName="error" targetType="kcg_bool"/>
+      <Automaton scadeName="SM1" targetStatesType="SSM_ST_SM1" targetTransitionsType="SSM_TR_SM1">
+        <State scadeName="OK" targetName="SSM_st_OK_SM1">
+          <Local clockVal="SSM_st_OK_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L5" scadeType="bool" targetName="_L5_OK_SM1" targetType="kcg_bool"/>
+          <Local clockVal="SSM_st_OK_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L6" scadeType="bool" targetName="_L6_OK_SM1" targetType="kcg_bool"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="x1_ko" targetName="SSM_TR_OK_x1_ko_1_OK_SM1"/>
+          </Fork>
+          <Fork priority="2">
+            <Condition/>
+            <Transition kind="strong" scadeDest="x2_ko" targetName="SSM_TR_OK_x2_ko_2_OK_SM1"/>
+          </Fork>
+          <Fork priority="3">
+            <Condition/>
+            <Transition kind="strong" scadeDest="x0_ko" targetName="SSM_TR_OK_x0_ko_3_OK_SM1"/>
+          </Fork>
+        </State>
+        <State scadeName="x1_ko" targetName="SSM_st_x1_ko_SM1">
+          <Local clockVal="SSM_st_x1_ko_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L2" scadeType="bool" targetName="_L2_x1_ko_SM1" targetType="kcg_bool"/>
+          <Local clockVal="SSM_st_x1_ko_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L3" scadeType="bool" targetName="_L3_x1_ko_SM1" targetType="kcg_bool"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="KO" targetName="SSM_TR_x1_ko_KO_1_x1_ko_SM1"/>
+          </Fork>
+        </State>
+        <State scadeName="x2_ko" targetName="SSM_st_x2_ko_SM1">
+          <Local clockVal="SSM_st_x2_ko_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L2" scadeType="bool" targetName="_L2_x2_ko_SM1" targetType="kcg_bool"/>
+          <Local clockVal="SSM_st_x2_ko_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L4" scadeType="bool" targetName="_L4_x2_ko_SM1" targetType="kcg_bool"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="KO" targetName="SSM_TR_x2_ko_KO_1_x2_ko_SM1"/>
+          </Fork>
+        </State>
+        <State scadeName="KO" targetName="SSM_st_KO_SM1">
+          <Local clockVal="SSM_st_KO_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L2" scadeType="bool" targetName="_L2_KO_SM1" targetType="kcg_bool"/>
+        </State>
+        <State scadeName="x0_ko" targetName="SSM_st_x0_ko_SM1">
+          <Local clockVal="SSM_st_x0_ko_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L2" scadeType="bool" targetName="_L2_x0_ko_SM1" targetType="kcg_bool"/>
+          <Local clockVal="SSM_st_x0_ko_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L3" scadeType="bool" targetName="_L3_x0_ko_SM1" targetType="kcg_bool"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="KO" targetName="SSM_TR_x0_ko_KO_1_x0_ko_SM1"/>
+          </Fork>
+        </State>
+        <ActiveState inCtx="true" targetName="SM1_state_act"/>
+        <SelectedState inCtx="true" targetName="SM1_state_sel"/>
+        <NextState inCtx="true" mem="true" targetName="SM1_state_nxt"/>
+        <ResetActiveState inCtx="true" mem="true" targetName="SM1_reset_act"/>
+        <ResetNextState inCtx="true" mem="true" targetName="SM1_reset_nxt"/>
+        <StrongTransition inCtx="true" targetName="SM1_fired_strong"/>
+        <WeakTransition inCtx="true" targetName="SM1_fired"/>
+      </Automaton>
+      <Memory inCtx="true" targetName="y" targetType="kcg_bool"/>
+      <Memory inCtx="true" targetName="SM1_state_nxt" targetType="SSM_ST_SM1"/>
+      <Clock inCtx="true" targetName="SM1_state_act" targetType="SSM_ST_SM1"/>
+      <OutCtxType targetName="outC_E1_Q2"/>
+      <InCtxType targetName="inC_E1_Q2"/>
+    </RootNode>
+    <ArrayType cellType="kcg_bool" size="3" targetCompFct="kcg_comp_array_bool_3" targetCopyFct="kcg_copy_array_bool_3" targetName="array_bool_3"/>
+    <PredefType scadeName="int8" targetName="kcg_int8"/>
+    <PredefType scadeName="int16" targetName="kcg_int16"/>
+    <PredefType scadeName="int32" targetName="kcg_int32"/>
+    <PredefType scadeName="int64" targetName="kcg_int64"/>
+    <PredefType scadeName="uint8" targetName="kcg_uint8"/>
+    <PredefType scadeName="uint16" targetName="kcg_uint16"/>
+    <PredefType scadeName="uint32" targetName="kcg_uint32"/>
+    <PredefType scadeName="uint64" targetName="kcg_uint64"/>
+    <PredefType scadeName="size" targetName="kcg_size"/>
+    <PredefType scadeName="float32" targetName="kcg_float32"/>
+    <PredefType scadeName="float64" targetName="kcg_float64"/>
+    <PredefType scadeName="bool" targetName="kcg_bool"/>
+    <PredefType scadeName="char" targetName="kcg_char"/>
+  </Model>
