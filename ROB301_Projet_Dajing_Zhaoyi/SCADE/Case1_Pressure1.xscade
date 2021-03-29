@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3">
+	<declarations>
+		<Operator kind="node" name="Case2_Pressure">
+			<inputs>
+				<Variable name="general_EV">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<last>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="general_EV"/>
+							</path>
+						</IdExpression>
+					</last>
+					<pragmas>
+						<ed:Variable oid="!ed/4d79/2B33/2DC/6046fe7157fd"/>
+					</pragmas>
+				</Variable>
+				<Variable name="circuit_state">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/4d7b/2B33/2DC/6046fe711d4e"/>
+					</pragmas>
+				</Variable>
+				<Variable name="duration">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int8"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/4d7c/2B33/2DC/6046fe7169de"/>
+					</pragmas>
+				</Variable>
+			</inputs>
+			<outputs>
+				<Variable name="anomaly">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<default>
+						<ConstValue value="false"/>
+					</default>
+					<pragmas>
+						<ed:Variable oid="!ed/4d78/2B33/2DC/6046fe711668"/>
+					</pragmas>
+				</Variable>
+			</outputs>
+			<locals>
+				<Variable name="general_EV_change">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<default>
+						<ConstValue value="false"/>
+					</default>
+					<pragmas>
+						<ed:Variable oid="!ed/4d76/2B33/2DC/6046fe71347c"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L2">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/4d73/2B33/2DC/6046fe711612"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L5">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/4e2b/2B33/2DC/6047010a395c"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L7">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/50e6/5460/34A4/605b2c184003"/>
+					</pragmas>
+				</Variable>
+			</locals>
+			<data>
+				<!-- general_EV_change = _L2; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="general_EV_change"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L2"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/4d63/2B33/2DC/6046fe7170c2"/>
+					</pragmas>
+				</Equation>
+				<!-- _L2 = _L5 <> _L7; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L2"/>
+					</lefts>
+					<right>
+						<!-- _L5 <> _L7 -->
+						<BinaryOp name="1" operator="&lt;&gt;">
+							<operands>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L5"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L7"/>
+									</path>
+								</IdExpression>
+							</operands>
+						</BinaryOp>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/4d64/2B33/2DC/6046fe716a1d"/>
+					</pragmas>
+				</Equation>
+				<StateMachine name="pressure_monitor">
+					<states>
+						<State initial="true" name="Ordinary">
+							<unless>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="detecting"/>
+									</target>
+									<condition>
+										<!-- general_EV_change and  last 'general_EV -->
+										<NAryOp name="4" operator="and">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="general_EV_change"/>
+													</path>
+												</IdExpression>
+												<Last>
+													<variable>
+														<ConstVarRef name="general_EV"/>
+													</variable>
+												</Last>
+											</operands>
+										</NAryOp>
+									</condition>
+									<pragmas>
+										<ed:Transition oid="!ed/4d69/2B33/2DC/6046fe713c91"/>
+									</pragmas>
+								</Transition>
+							</unless>
+							<pragmas>
+								<ed:State oid="!ed/4d68/2B33/2DC/6046fe713ac3"/>
+							</pragmas>
+						</State>
+						<State name="detecting">
+							<unless>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="Ordinary"/>
+									</target>
+									<condition>
+										<!-- circuit_state = false -->
+										<BinaryOp name="4" operator="=">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="circuit_state"/>
+													</path>
+												</IdExpression>
+												<ConstValue value="false"/>
+											</operands>
+										</BinaryOp>
+									</condition>
+									<pragmas>
+										<ed:Transition oid="!ed/4d6b/2B33/2DC/6046fe712d05"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="abnormal"/>
+									</target>
+									<condition>
+										<!-- duration times true -->
+										<BinaryOp name="1" operator="times">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="duration"/>
+													</path>
+												</IdExpression>
+												<ConstValue value="true"/>
+											</operands>
+										</BinaryOp>
+									</condition>
+									<pragmas>
+										<ed:Transition oid="!ed/4d6c/2B33/2DC/6046fe714372"/>
+									</pragmas>
+								</Transition>
+							</unless>
+							<pragmas>
+								<ed:State oid="!ed/4d6a/2B33/2DC/6046fe71122a"/>
+							</pragmas>
+						</State>
+						<State name="abnormal">
+							<locals>
+								<Variable name="_L2">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/4d70/2B33/2DC/6046fe7127cf"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- _L2 = true; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L2"/>
+									</lefts>
+									<right>
+										<ConstValue value="true"/>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/4d6e/2B33/2DC/6046fe7116f"/>
+									</pragmas>
+								</Equation>
+								<!-- anomaly = _L2; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="anomaly"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L2"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/4d6f/2B33/2DC/6046fe71636e"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<pragmas>
+								<ed:State oid="!ed/4d6d/2B33/2DC/6046fe715d5e"/>
+							</pragmas>
+						</State>
+					</states>
+					<pragmas>
+						<ed:StateMachine oid="!ed/4d67/2B33/2DC/6046fe716f6d"/>
+					</pragmas>
+				</StateMachine>
+				<!-- _L5 = general_EV; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L5"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="general_EV"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/4e2a/2B33/2DC/6047010a2db4"/>
+					</pragmas>
+				</Equation>
+				<!-- _L7 =  last 'general_EV; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L7"/>
+					</lefts>
+					<right>
+						<Last>
+							<variable>
+								<ConstVarRef name="general_EV"/>
+							</variable>
+						</Last>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/50e5/5460/34A4/605b2c18624a"/>
+					</pragmas>
+				</Equation>
+			</data>
+			<pragmas>
+				<ed:Operator oid="!ed/4d62/2B33/2DC/6046fe717835" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+					<comment>This case deals with the second case of anomaly of pressure sensor monitoring.</comment>
+					<diagrams>
+						<NetDiagram name="Case2_Pressure" landscape="true" format="A4 (210 297)" oid="!ed/4d71/2B33/2DC/6046fe715cbf">
+							<presentationElements>
+								<EquationGE kind="OBJ_VAR_OUT" presentable="!ed/4d63/2B33/2DC/6046fe7170c2">
+									<position>
+										<Point x="15875" y="1566"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/4d64/2B33/2DC/6046fe716a1d">
+									<position>
+										<Point x="13589" y="1461"/>
+									</position>
+									<size>
+										<Size width="1016" height="656"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4d64/2B33/2DC/6046fe716a1d" dstEquation="!ed/4d63/2B33/2DC/6046fe7170c2">
+									<positions>
+										<Point x="14605" y="1799"/>
+										<Point x="15240" y="1799"/>
+										<Point x="15240" y="1799"/>
+										<Point x="15875" y="1799"/>
+									</positions>
+								</Edge>
+								<StateMachineGE presentable="!ed/4d67/2B33/2DC/6046fe716f6d">
+									<position>
+										<Point x="7324" y="4784"/>
+									</position>
+									<size>
+										<Size width="20764" height="11366"/>
+									</size>
+								</StateMachineGE>
+								<StateGE presentable="!ed/4d68/2B33/2DC/6046fe713ac3">
+									<position>
+										<Point x="8784" y="6117"/>
+									</position>
+									<size>
+										<Size width="3768" height="2879"/>
+									</size>
+								</StateGE>
+								<StateGE presentable="!ed/4d6a/2B33/2DC/6046fe71122a">
+									<position>
+										<Point x="20997" y="6181"/>
+									</position>
+									<size>
+										<Size width="3768" height="2879"/>
+									</size>
+								</StateGE>
+								<TransitionGE presentable="!ed/4d69/2B33/2DC/6046fe713c91">
+									<textAreas>
+										<TextArea text="general_EV_change and last 'general_EV" role="130"/>
+									</textAreas>
+									<positions>
+										<Point x="12552" y="7070"/>
+										<Point x="13568" y="7070"/>
+										<Point x="19960" y="7091"/>
+										<Point x="20997" y="7070"/>
+									</positions>
+									<labelSize>
+										<Size width="15748" height="8297"/>
+									</labelSize>
+									<labelPos>
+										<Point x="13187" y="7028"/>
+									</labelPos>
+									<slashPos>
+										<Point x="19262" y="7027"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/4d6b/2B33/2DC/6046fe712d05">
+									<positions>
+										<Point x="20997" y="8086"/>
+										<Point x="18182" y="8043"/>
+										<Point x="15367" y="8001"/>
+										<Point x="12552" y="7938"/>
+									</positions>
+									<labelSize>
+										<Size width="4170" height="3260"/>
+									</labelSize>
+									<labelPos>
+										<Point x="14669" y="8531"/>
+									</labelPos>
+									<slashPos>
+										<Point x="18119" y="8530"/>
+									</slashPos>
+								</TransitionGE>
+								<StateGE presentable="!ed/4d6d/2B33/2DC/6046fe715d5e">
+									<position>
+										<Point x="21167" y="11769"/>
+									</position>
+									<size>
+										<Size width="3768" height="2879"/>
+									</size>
+								</StateGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/4d6e/2B33/2DC/6046fe7116f">
+									<position>
+										<Point x="22056" y="13166"/>
+									</position>
+									<size>
+										<Size width="170" height="296"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/4d6f/2B33/2DC/6046fe71636e">
+									<position>
+										<Point x="23305" y="13039"/>
+									</position>
+									<size>
+										<Size width="339" height="508"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4d6e/2B33/2DC/6046fe7116f" dstEquation="!ed/4d6f/2B33/2DC/6046fe71636e">
+									<positions>
+										<Point x="22225" y="13314"/>
+										<Point x="23072" y="13314"/>
+										<Point x="23072" y="13314"/>
+										<Point x="23347" y="13314"/>
+									</positions>
+								</Edge>
+								<TransitionGE presentable="!ed/4d6c/2B33/2DC/6046fe714372">
+									<positions>
+										<Point x="22924" y="9059"/>
+										<Point x="22966" y="9948"/>
+										<Point x="23008" y="10837"/>
+										<Point x="23072" y="11769"/>
+									</positions>
+									<labelSize>
+										<Size width="4741" height="5038"/>
+									</labelSize>
+									<labelPos>
+										<Point x="18182" y="9652"/>
+									</labelPos>
+									<slashPos>
+										<Point x="22204" y="9652"/>
+									</slashPos>
+								</TransitionGE>
+								<EquationGE presentable="!ed/4e2a/2B33/2DC/6047010a2db4">
+									<position>
+										<Point x="9991" y="1270"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e2a/2B33/2DC/6047010a2db4" dstEquation="!ed/4d64/2B33/2DC/6046fe716a1d">
+									<positions>
+										<Point x="10245" y="1524"/>
+										<Point x="11917" y="1524"/>
+										<Point x="11917" y="1672"/>
+										<Point x="13589" y="1672"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/50e5/5460/34A4/605b2c18624a">
+									<position>
+										<Point x="9991" y="1990"/>
+									</position>
+									<size>
+										<Size width="254" height="529"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/50e5/5460/34A4/605b2c18624a" dstEquation="!ed/4d64/2B33/2DC/6046fe716a1d">
+									<positions>
+										<Point x="10245" y="2244"/>
+										<Point x="11917" y="2244"/>
+										<Point x="11917" y="1905"/>
+										<Point x="13589" y="1905"/>
+									</positions>
+								</Edge>
+							</presentationElements>
+						</NetDiagram>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>

@@ -1,0 +1,42 @@
+
+[STUDIO\TOOLS\CONFIGURATIONS\Code Generator]
+
+"D:\\ROB301_Zhaoyi_Dajing\\ROB301_projet.etp"="KCG" 
+"D:\\ROB301_Dajing_Zhaoyi\\SCADE\\ROB301_projet.etp"="KCG" 
+
+[STUDIO\TOOLS\CONFIGURATIONS\Metrics and Rules Checker]
+
+"D:\\ROB301_Zhaoyi_Dajing\\ROB301_projet.etp"="MetricRule" 
+"D:\\ROB301_Dajing_Zhaoyi\\SCADE\\ROB301_projet.etp"="MetricRule" 
+
+[STUDIO\TOOLS\CONFIGURATIONS\Reporter]
+
+"D:\\ROB301_Zhaoyi_Dajing\\ROB301_projet.etp"="HTML" 
+"D:\\ROB301_Dajing_Zhaoyi\\SCADE\\ROB301_projet.etp"="HTML" 
+
+[STUDIO\TOOLS\CONFIGURATIONS\Timing and Stack Analysis Tools]
+
+"D:\\ROB301_Zhaoyi_Dajing\\ROB301_projet.etp"="KCG" 
+"D:\\ROB301_Dajing_Zhaoyi\\SCADE\\ROB301_projet.etp"="KCG" 
+
+[STUDIO\Workspace]
+
+"ActiveProject"="D:\\ROB301_Dajing_Zhaoyi\\SCADE\\ROB301_projet.etp" 
+
+[SCADE\Editor\Shortcut]
+
+"groupNb"="0" 
+
+[SCADE\Editor\Tool]
+
+"UsePolyline"="false" 
+"TransitionKind"="strong" 
+
+[SCADE\Diff\Tool]
+
+"LastProject1"="" 
+"LastProject2"="" 
+
+[SCADE\Generator\Tool]
+
+"PragmaTarget"="" 

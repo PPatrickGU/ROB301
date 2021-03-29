@@ -1,0 +1,13 @@
+$ ANSYS SCADE Suite (R) Code Generator version Student 2021 R1 (build 20201118) 
+** Command: scadecg.exe -config D:/study/3A/ROB301/projet_landing/projet_operators/KCG/config.txt
+** Generation date: 2021-03-09T15:11:39
+*************************************************************$
+*** XML format Error (ERR_3): Incomplete model
+  at file D:/study/3A/ROB301/projet_landing/projet_operators/Operator3.xscade, line 174, character 11
+No warning was found
+1 error was found
+No failure occurred
+$ ANSYS SCADE Suite (R) Code Generator version Student 2021 R1 (build 20201118) 
+** kcg.log
+** Generation date: 2021-03-09T15:11:39
+*************************************************************$

@@ -1,0 +1,3 @@
+-target_dir "D:/study/3A/ROB301/projet_landing/projet_operators/Simulation" -target C -name_length 200 -significance_length 31 -user_config "./user_macros.h" -probes -debug 
+-root ifvalid_sensor
+"D:/study/3A/ROB301/projet_landing/projet_operators/Simulation/scade_model_without_unused.scade"

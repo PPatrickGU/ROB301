@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <Model commandLine="" date="">
+    <Option name="use_types" value="#off#"/>
+    <Option name="imported_root_package" value="#off#"/>
+    <Option name="root_package" value="#off#"/>
+    <Option name="xml_basename" value="kcg_xml_filter_out.scade"/>
+    <Option name="state_vector" value="#off#"/>
+    <Option name="static" value="#off#"/>
+    <Option name="separate_io_all" value="#off#"/>
+    <Option name="no_separate_io" value="#off#"/>
+    <Option name="separate_io" value="#off#"/>
+    <Option name="warn_error" value="#off#"/>
+    <Option name="short_circuit" value="#off#"/>
+    <Option name="wrap_c_ops" value="#off#"/>
+    <Option name="input_file" value="D:/study/3A/ROB301/projet_landing/projet_operators/Simulation/scade_model_without_unused.scade"/>
+    <Option name="probes" value="#on#"/>
+    <Option name="no_observe" value="#off#"/>
+    <Option name="observe" value="#off#"/>
+    <Option name="debug" value="#on#"/>
+    <Option name="user_config" value="./user_macros.h"/>
+    <Option name="input_threshold" value="#off#"/>
+    <Option name="header" value="#off#"/>
+    <Option name="significance_length" value="31"/>
+    <Option name="name_length" value="200"/>
+    <Option name="globals_prefix" value="#off#"/>
+    <Option name="keep_asserts" value="#off#"/>
+    <Option name="global_root_context" value="#off#"/>
+    <Option name="expall" value="#off#"/>
+    <Option name="noexp" value="#off#"/>
+    <Option name="exp" value="#off#"/>
+    <Option name="target_dir" value="D:/study/3A/ROB301/projet_landing/projet_operators/Simulation"/>
+    <Option name="target" value="C"/>
+    <Option name="root" value="ifvalid_sensor"/>
+    <Option name="auth" value="#off#"/>
+    <RootNode headerFile="ifvalid_sensor.h" scadeName="ifvalid_sensor" targetCycleFct="ifvalid_sensor" targetInitFct="ifvalid_sensor_reset" targetInitializationFct="ifvalid_sensor_init">
+      <Input inCtx="true" scadeName="sensor_1" scadeType="bool" targetName="sensor_1" targetType="kcg_bool"/>
+      <Input inCtx="true" scadeName="sensor_2" scadeType="bool" targetName="sensor_2" targetType="kcg_bool"/>
+      <Input inCtx="true" scadeName="sensor_3" scadeType="bool" targetName="sensor_3" targetType="kcg_bool"/>
+      <Output inCtx="true" scadeName="output" scadeType="bool" targetName="output" targetType="kcg_bool"/>
+      <Output inCtx="true" scadeName="anomaly" scadeType="bool" targetName="anomaly" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="diff_12" scadeType="bool" targetName="diff_12" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="diff_23" scadeType="bool" targetName="diff_23" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="diff_13" scadeType="bool" targetName="diff_13" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="equal_12" scadeType="bool" targetName="equal_12" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="equal_13" scadeType="bool" targetName="equal_13" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="equal_23" scadeType="bool" targetName="equal_23" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L1" scadeType="bool" targetName="_L1" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L2" scadeType="bool" targetName="_L2" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L4" scadeType="bool" targetName="_L4" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L14" scadeType="bool" targetName="_L14" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L15" scadeType="bool" targetName="_L15" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L16" scadeType="bool" targetName="_L16" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L18" scadeType="bool" targetName="_L18" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L19" scadeType="bool" targetName="_L19" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L20" scadeType="bool" targetName="_L20" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L22" scadeType="bool" targetName="_L22" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L23" scadeType="bool" targetName="_L23" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L24" scadeType="bool" targetName="_L24" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L26" scadeType="bool" targetName="_L26" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L28" scadeType="bool" targetName="_L28" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L29" scadeType="bool" targetName="_L29" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L30" scadeType="bool" targetName="_L30" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L33" scadeType="bool" targetName="_L33" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L34" scadeType="bool" targetName="_L34" targetType="kcg_bool"/>
+      <Automaton scadeName="test_valiid" targetStatesType="SSM_ST_test_valiid" targetTransitionsType="SSM_TR_test_valiid">
+        <State scadeName="valid_all" targetName="SSM_st_valid_all_test_valiid">
+          <Local clockVal="SSM_st_valid_all_test_valiid" clockVar="test_valiid_state_act" inCtx="true" scadeName="_L1" scadeType="bool" targetName="_L1_valid_all_test_valiid" targetType="kcg_bool"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="Eliminate_1" targetName="SSM_TR_valid_all_Eliminate_1_1_valid_all_test_valiid"/>
+          </Fork>
+          <Fork priority="2">
+            <Condition/>
+            <Transition kind="strong" scadeDest="Eliminate_2" targetName="SSM_TR_valid_all_Eliminate_2_2_valid_all_test_valiid"/>
+          </Fork>
+          <Fork priority="3">
+            <Condition/>
+            <Transition kind="strong" scadeDest="Eliminate_3" targetName="SSM_TR_valid_all_Eliminate_3_3_valid_all_test_valiid"/>
+          </Fork>
+        </State>
+        <State scadeName="Eliminate_1" targetName="SSM_st_Eliminate_1_test_valiid">
+          <Local clockVal="SSM_st_Eliminate_1_test_valiid" clockVar="test_valiid_state_act" inCtx="true" scadeName="_L2" scadeType="bool" targetName="_L2_Eliminate_1_test_valiid" targetType="kcg_bool"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="Invalid" targetName="SSM_TR_Eliminate_1_Invalid_1_Eliminate_1_test_valiid"/>
+          </Fork>
+        </State>
+        <State scadeName="Eliminate_2" targetName="SSM_st_Eliminate_2_test_valiid">
+          <Local clockVal="SSM_st_Eliminate_2_test_valiid" clockVar="test_valiid_state_act" inCtx="true" scadeName="_L1" scadeType="bool" targetName="_L1_Eliminate_2_test_valiid" targetType="kcg_bool"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="Invalid" targetName="SSM_TR_Eliminate_2_Invalid_1_Eliminate_2_test_valiid"/>
+          </Fork>
+        </State>
+        <State scadeName="Eliminate_3" targetName="SSM_st_Eliminate_3_test_valiid">
+          <Local clockVal="SSM_st_Eliminate_3_test_valiid" clockVar="test_valiid_state_act" inCtx="true" scadeName="_L1" scadeType="bool" targetName="_L1_Eliminate_3_test_valiid" targetType="kcg_bool"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="Invalid" targetName="SSM_TR_Eliminate_3_Invalid_1_Eliminate_3_test_valiid"/>
+          </Fork>
+        </State>
+        <State scadeName="Invalid" targetName="SSM_st_Invalid_test_valiid">
+          <Local clockVal="SSM_st_Invalid_test_valiid" clockVar="test_valiid_state_act" inCtx="true" scadeName="_L1" scadeType="bool" targetName="_L1_Invalid_test_valiid" targetType="kcg_bool"/>
+        </State>
+        <ActiveState inCtx="true" targetName="test_valiid_state_act"/>
+        <SelectedState inCtx="true" targetName="test_valiid_state_sel"/>
+        <NextState inCtx="true" mem="true" targetName="test_valiid_state_nxt"/>
+        <ResetActiveState inCtx="true" mem="true" targetName="test_valiid_reset_act"/>
+        <ResetNextState inCtx="true" mem="true" targetName="test_valiid_reset_nxt"/>
+        <StrongTransition inCtx="true" targetName="test_valiid_fired_strong"/>
+        <WeakTransition inCtx="true" targetName="test_valiid_fired"/>
+      </Automaton>
+      <Memory inCtx="true" targetName="output" targetType="kcg_bool"/>
+      <Memory inCtx="true" targetName="test_valiid_state_nxt" targetType="SSM_ST_test_valiid"/>
+      <Clock inCtx="true" targetName="test_valiid_state_act" targetType="SSM_ST_test_valiid"/>
+      <OutCtxType targetName="outC_ifvalid_sensor"/>
+      <InCtxType targetName="inC_ifvalid_sensor"/>
+    </RootNode>
+    <PredefType scadeName="int8" targetName="kcg_int8"/>
+    <PredefType scadeName="int16" targetName="kcg_int16"/>
+    <PredefType scadeName="int32" targetName="kcg_int32"/>
+    <PredefType scadeName="int64" targetName="kcg_int64"/>
+    <PredefType scadeName="uint8" targetName="kcg_uint8"/>
+    <PredefType scadeName="uint16" targetName="kcg_uint16"/>
+    <PredefType scadeName="uint32" targetName="kcg_uint32"/>
+    <PredefType scadeName="uint64" targetName="kcg_uint64"/>
+    <PredefType scadeName="size" targetName="kcg_size"/>
+    <PredefType scadeName="float32" targetName="kcg_float32"/>
+    <PredefType scadeName="float64" targetName="kcg_float64"/>
+    <PredefType scadeName="bool" targetName="kcg_bool"/>
+    <PredefType scadeName="char" targetName="kcg_char"/>
+  </Model>
